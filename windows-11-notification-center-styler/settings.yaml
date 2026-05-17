@@ -1,0 +1,19 @@
+theme: TranslucentShell
+controlStyles:
+  - target: Grid#NotificationCenterGrid
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="$mainBlurAmount" TintColor="$mainColor" />
+  - target: Grid#CalendarCenterGrid
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="$mainBlurAmount" TintColor="$mainColor" />
+  - target: Grid#MediaTransportControlsRegion
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="$mainBlurAmount" TintColor="$mainColor" />
+styleConstants:
+  - mainColor=#A0101018
+  - mainBlurAmount=2
+themeResourceVariables:
+  - ''
+resourceVariables:
+  - variableKey: ''
+    value: ''

@@ -1,0 +1,20 @@
+theme: TranslucentStartMenu
+disableNewStartMenuLayout: 0
+controlStyles:
+  - target: Border#AcrylicBorder
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="$mainBlurAmount" TintColor="$mainColor" />
+  - target: Border#AppBorder
+    styles:
+      - Background:=<WindhawkBlur BlurAmount="$mainBlurAmount" TintColor="$mainColor" />
+webContentStyles:
+  - target: ''
+    styles:
+      - ''
+webContentCustomJs: ''
+styleConstants:
+  - mainColor=#A0101018
+  - mainBlurAmount=2
+resourceVariables:
+  - variableKey: ''
+    value: ''
