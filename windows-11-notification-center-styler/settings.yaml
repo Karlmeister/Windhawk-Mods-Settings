@@ -1,17 +1,16 @@
 theme: TranslucentShell
+styleConstants:
+  - CommonBgBrush=<WindhawkBlur BlurAmount="2" TintColor="#60202020" />
 controlStyles:
   - target: Grid#NotificationCenterGrid
     styles:
-      - Background:=<WindhawkBlur BlurAmount="$mainBlurAmount" TintColor="$mainColor" />
+      - Background:=$CommonBgBrush
   - target: Grid#CalendarCenterGrid
     styles:
-      - Background:=<WindhawkBlur BlurAmount="$mainBlurAmount" TintColor="$mainColor" />
+      - Background:=$CommonBgBrush
   - target: Grid#MediaTransportControlsRegion
     styles:
-      - Background:=<WindhawkBlur BlurAmount="$mainBlurAmount" TintColor="$mainColor" />
-styleConstants:
-  - mainColor=#A0101018
-  - mainBlurAmount=2
+      - Background:=$CommonBgBrush
 themeResourceVariables:
   - ''
 resourceVariables:

@@ -1,50 +1,43 @@
 theme: TranslucentTaskbar
+styleConstants:
+  - CommonBgBrush=<WindhawkBlur BlurAmount="2" TintColor="#60202020" />
 controlStyles:
   - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
     styles:
-      - Fill:=<WindhawkBlur BlurAmount="$mainBlurAmount" TintColor="$mainColor" />
+      - Fill:=$CommonBgBrush
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
-      - Fill:=<WindhawkBlur BlurAmount="$mainBlurAmount" TintColor="$mainColor" />
-  - target: Rectangle#BackgrouTaskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFillndStrokTaskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFillTaskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFille
-    styles:
-      - Visibility:=Collapsed
-  - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
-    styles:
-      - Fill:=<WindhawkBlur BlurAmount="$mainBlurAmount" TintColor="$mainColor" />
+      - Fill:=$CommonBgBrush
   - target: MenuFlyoutPresenter > Border
     styles:
-      - Background:=<WindhawkBlur BlurAmount="$mainBlurAmount" TintColor="$mainColor" />
+      - Background:=$CommonBgBrush
   - target: Border#OverflowFlyoutBackgroundBorder
     styles:
-      - Background:=<WindhawkBlur BlurAmount="$mainBlurAmount" TintColor="$mainColor" />
+      - Background:=$CommonBgBrush
   - target: Grid#ConfirmatorMainGrid
     styles:
-      - Background:=<WindhawkBlur BlurAmount="$mainBlurAmount" TintColor="$mainColor" />
+      - Background:=$CommonBgBrush
   - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
     styles:
-      - Background:=<WindhawkBlur BlurAmount="$mainBlurAmount" TintColor="$mainColor" />
+      - Background:=$CommonBgBrush
   - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid > Grid
     styles:
-      - Background:=<WindhawkBlur BlurAmount="$mainBlurAmount" TintColor="$mainColor" />
+      - Background:=$CommonBgBrush
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Border#BackgroundElement
     styles:
       - Background:=<ImageBrush Stretch="Uniform" ImageSource="E:\Pictures\Íconos\W11SE_Marine_01.png" />
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
     styles:
-      - Visibility:=Collapsed
+      - Visibility=Collapsed
   - target: Border#OverflowFlyoutBackgroundBorder
     styles:
-      - Fill:=<WindhawkBlur BlurAmount="$mainBlurAmount" TintColor="$mainColor" />
+      - Fill:=$CommonBgBrush
   - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
-      - Background:=<WindhawkBlur BlurAmount="$mainBlurAmount" TintColor="$mainColor" />
+      - Background:=$CommonBgBrush
   - target: Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer
     styles:
-      - Background:=<WindhawkBlur BlurAmount="$mainBlurAmount" TintColor="$mainColor" />
-styleConstants:
-  - mainColor=#A0101018
-  - mainBlurAmount=2
-resourceVariables:
-  - variableKey: ''
-    value: ''
+      - Background:=$CommonBgBrush
+themeResourceVariables:
+  - ''
+xamlDiagnosticsHandling: ''
