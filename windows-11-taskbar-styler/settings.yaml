@@ -1,40 +1,62 @@
 theme: TranslucentTaskbar
 styleConstants:
-  - CommonBgBrush=<WindhawkBlur BlurAmount="2" TintColor="#60202020" />
+  - CommonBgBrush=<WindhawkBlur BlurAmount="2" TintColor="#20202020" />
+  - IslandBgBrush=<WindhawkBlur BlurAmount="2" TintColor="#40000000" />
+  - IslandVerticalMargin=3
+  - IslandHorizontalMargin=5
+  - TaskbarFrameMaxWidth=5120
 controlStyles:
-  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
+  # Background
+  - target: ':root > ScrollViewer > ScrollContentPresenter > Border > Grid'
     styles:
-      - Fill:=$CommonBgBrush
+      - Background:=$CommonBgBrush
+      - HorizontalAlignment=Stretch
+      - ActualWidth=>containerGridWidth
+  # Taskbar
+  - target: Taskbar.TaskbarFrame
+    styles:
+      - Width=Auto
+      - HorizontalAlignment=Center
+      - Margin=0,0,$IslandHorizontalMargin,0
+      - Height=50
+  - target: Taskbar.TaskbarFrame > Grid
+    styles:
+      - Background:=$IslandBgBrush
+      - CornerRadius=10
+      - Margin=0,$IslandVerticalMargin,0,$IslandVerticalMargin
+      - Padding=5,0,5,0
+  # System tray
+  - target: Grid#SystemTrayFrameGrid
+    styles:
+      - Background:=$IslandBgBrush
+      - CornerRadius=10
+      - Margin=0,$IslandVerticalMargin,0,$IslandVerticalMargin
+      - Padding=5,0,0,0
+  # Weather Widget
+  - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
+    styles:
+      - CornerRadius=10
+  # Thumbnail preview background
   - target: Taskbar.TaskbarBackground#HoverFlyoutBackgroundControl > Grid > Rectangle#BackgroundFill
     styles:
       - Fill:=$CommonBgBrush
-  - target: MenuFlyoutPresenter > Border
-    styles:
-      - Background:=$CommonBgBrush
-  - target: Border#OverflowFlyoutBackgroundBorder
-    styles:
-      - Background:=$CommonBgBrush
-  - target: Grid#ConfirmatorMainGrid
-    styles:
-      - Background:=$CommonBgBrush
-  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid
-    styles:
-      - Background:=$CommonBgBrush
-  - target: WindowsInternal.ComposableShell.Experiences.TextInput.Common.InputSwitcher > ContentControl > ContentPresenter > Grid > Grid
-    styles:
-      - Background:=$CommonBgBrush
+  # Start button image
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Border#BackgroundElement
     styles:
       - Background:=<ImageBrush Stretch="Uniform" ImageSource="E:\Pictures\Íconos\W11SE_Marine_01.png" />
+  # Hides Start button animation
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
     styles:
       - Visibility=Collapsed
+  # Tray overflow background
   - target: Border#OverflowFlyoutBackgroundBorder
     styles:
-      - Fill:=$CommonBgBrush
+      - Background:=$CommonBgBrush
+  # Alt+Tab background
   - target: Windows.UI.Xaml.Controls.Grid#ModalRootGrid > Windows.UI.Xaml.Controls.Border#BackgroundElement
     styles:
-      - Background:=$CommonBgBrush
+      - Background:=$IslandBgBrush
+  # Task view background
   - target: Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer
     styles:
       - Background:=$CommonBgBrush
