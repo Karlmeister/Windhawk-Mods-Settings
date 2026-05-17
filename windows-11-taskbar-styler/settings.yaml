@@ -1,37 +1,21 @@
-theme: TranslucentTaskbar
+theme: UltraWideFriendly
 styleConstants:
-  - CommonBgBrush=<WindhawkBlur BlurAmount="2" TintColor="#20202020" />
-  - IslandBgBrush=<WindhawkBlur BlurAmount="2" TintColor="#40000000" />
-  - IslandVerticalMargin=3
-  - IslandHorizontalMargin=5
-  - TaskbarFrameMaxWidth=5120
+  - CommonBgBrush=<WindhawkBlur BlurAmount="1" TintColor="#66000000" />
+  - IslandBgBrush=<WindhawkBlur BlurAmount="2" TintColor="{ThemeResource ControlFillColorDefault}" />
 controlStyles:
   # Background
   - target: ':root > ScrollViewer > ScrollContentPresenter > Border > Grid'
     styles:
       - Background:=$CommonBgBrush
-      - HorizontalAlignment=Stretch
-      - ActualWidth=>containerGridWidth
   # Taskbar
   - target: Taskbar.TaskbarFrame
-    styles:
-      - Width=Auto
-      - HorizontalAlignment=Center
-      - Margin=0,0,$IslandHorizontalMargin,0
-      - Height=50
   - target: Taskbar.TaskbarFrame > Grid
     styles:
       - Background:=$IslandBgBrush
-      - CornerRadius=10
-      - Margin=0,$IslandVerticalMargin,0,$IslandVerticalMargin
-      - Padding=5,0,5,0
   # System tray
   - target: Grid#SystemTrayFrameGrid
     styles:
       - Background:=$IslandBgBrush
-      - CornerRadius=10
-      - Margin=0,$IslandVerticalMargin,0,$IslandVerticalMargin
-      - Padding=5,0,0,0
   # Weather Widget
   - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
