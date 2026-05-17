@@ -1,21 +1,47 @@
-theme: UltraWideFriendly
+theme: ''
 styleConstants:
   - CommonBgBrush=<WindhawkBlur BlurAmount="1" TintColor="#66000000" />
   - IslandBgBrush=<WindhawkBlur BlurAmount="2" TintColor="{ThemeResource ControlFillColorDefault}" />
+  - IslandVerticalMargin=3
+  - IslandHorizontalMargin=5
+  - TaskbarFrameMaxWidth=8000
 controlStyles:
   # Background
   - target: ':root > ScrollViewer > ScrollContentPresenter > Border > Grid'
     styles:
+      - HorizontalAlignment=Stretch
       - Background:=$CommonBgBrush
+      - ActualWidth=>containerGridWidth
   # Taskbar
   - target: Taskbar.TaskbarFrame
+    styles:
+      - Width=Auto
+      - HorizontalAlignment=Center
+      - Margin=0,0,$IslandHorizontalMargin,0
+      - MaxWidth={{min($TaskbarFrameMaxWidth, containerGridWidth)}}
   - target: Taskbar.TaskbarFrame > Grid
     styles:
       - Background:=$IslandBgBrush
+      - CornerRadius=10
+      - Padding=25,0,25,0
+      - Margin=0,$IslandVerticalMargin,0,$IslandVerticalMargin
+  - target: Taskbar.TaskbarBackground#BackgroundControl
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
+    styles:
+      - Fill=Transparent
   # System tray
+  - target: SystemTray.SystemTrayFrame
+    styles:
+      - Width=Auto
+      - Margin=$IslandHorizontalMargin,0,0,0
   - target: Grid#SystemTrayFrameGrid
     styles:
       - Background:=$IslandBgBrush
+      - CornerRadius=10
+      - Padding=5,0,5,0
+      - Margin=0,$IslandVerticalMargin,0,$IslandVerticalMargin
   # Weather Widget
   - target: Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
@@ -44,6 +70,3 @@ controlStyles:
   - target: Windows.UI.Xaml.Controls.Border#BackgroundDimmingLayer
     styles:
       - Background:=$CommonBgBrush
-themeResourceVariables:
-  - ''
-xamlDiagnosticsHandling: ''
