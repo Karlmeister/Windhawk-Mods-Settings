@@ -1,21 +1,27 @@
-theme: TranslucentStartMenu
+theme: 'TranslucentStartMenu'
 disableNewStartMenuLayout: '0'
 styleConstants:
-  - CommonBgBrush=<WindhawkBlur BlurAmount="2" TintColor="#60202020" />
+  - CommonBgBrush=<WindhawkBlur BlurAmount="1" TintColor="#66000000" />
+  - ButtonBgBrush=<WindhawkBlur BlurAmount="2" TintColor="{ThemeResource ControlFillColorDefault}" />
+  - TestBgBrush=<WindhawkBlur BlurAmount="1" TintColor="#66F00000" />
 controlStyles:
+  # StartMenu Background
   - target: Border#AcrylicBorder
     styles:
       - Background:=$CommonBgBrush
+  # Search Textbox Background
+  - target: StartMenu.SearchBoxToggleButton#SearchBoxToggleButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BorderElement
+    styles:
+      - Background:=$ButtonBgBrush
+  # Search AppMenu Background
   - target: Border#AppBorder
     styles:
       - Background:=$CommonBgBrush
-themeResourceVariables:
-  - ''
-webContentStyles:
-  - target: ''
+  # Context Menu
+  - target: MenuFlyoutPresenter > Border
     styles:
-      - ''
-webContentCustomJs: ''
-resourceVariables:
-  - variableKey: ''
-    value: ''
+      - Background:=$CommonBgBrush
+  # All Apps Groups Background
+  - target: StartMenu.CategoryControl > Windows.UI.Xaml.Controls.Grid#RootGrid > Windows.UI.Xaml.Controls.Border
+    styles:
+      - Background:=$CommonBgBrush
