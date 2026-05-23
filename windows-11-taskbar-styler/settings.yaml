@@ -51,9 +51,14 @@ controlStyles:
     styles:
       - Fill:=$CommonBgBrush
   # Start button image
-  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Border#BackgroundElement
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement
     styles:
-      - Background:=<ImageBrush Stretch="Uniform" ImageSource="E:\Pictures\Íconos\W11SE_Marine_01.png" />
+      - Background@InactiveNormal:=<ImageBrush Stretch="Uniform" ImageSource="E:\Pictures\Íconos\Windows\Start Menu\Test\inactive_normal.png" />
+      - Background@InactivePointerOver:=<ImageBrush Stretch="Uniform" ImageSource="E:\Pictures\Íconos\Windows\Start Menu\Test\inactive_pointerover.png" />
+      - Background@InactivePressed:=<ImageBrush Stretch="Uniform" ImageSource="E:\Pictures\Íconos\Windows\Start Menu\Test\inactive_pressed.png" />
+      - Background@ActiveNormal:=<ImageBrush Stretch="Uniform" ImageSource="E:\Pictures\Íconos\Windows\Start Menu\Test\active_normal.png" />
+      - Background@ActivePointerOver:=<ImageBrush Stretch="Uniform" ImageSource="E:\Pictures\Íconos\Windows\Start Menu\Test\active_pointerover.png" />
+      - Background@ActivePressed:=<ImageBrush Stretch="Uniform" ImageSource="E:\Pictures\Íconos\Windows\Start Menu\Test\active_normal.png" />
   # Hides Start button animation
   - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
     styles:
